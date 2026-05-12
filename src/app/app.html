@@ -1,0 +1,154 @@
+<main class="site-shell">
+  <nav class="topbar" aria-label="Navegacion principal">
+    <a class="brand" href="#inicio" aria-label="Haircut and Chill">
+      <span class="brand-mark">H&C</span>
+      <span>
+        <strong>Haircut & Chill</strong>
+        <small>JuanSe Favoretti</small>
+      </span>
+    </a>
+
+    <div class="nav-links">
+      <a href="#servicios">Servicios</a>
+      <a href="#historia">Juanse</a>
+      <a href="#turnos">Turnos</a>
+    </div>
+
+    <a class="nav-cta" href="https://www.instagram.com/haircut.andchill/" target="_blank" rel="noreferrer">
+      Instagram
+    </a>
+  </nav>
+
+  <section id="inicio" class="hero">
+    <div class="hero-copy">
+      <p class="overline">Peluqueria en Tandil</p>
+      <h1>Donde el corte relaja</h1>
+      <p class="hero-lead">
+        Cortes, barba, color y detalles con linea propia. Un espacio para salir prolijo,
+        comodo y con ese rato de calma que tambien se nota en el estilo.
+      </p>
+
+      <div class="hero-actions">
+        <a
+          pButton
+          class="primary-action"
+          href="https://wa.me/?text=Hola%20Juanse%2C%20quiero%20reservar%20un%20turno%20en%20Haircut%20%26%20Chill"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Pedir turno
+        </a>
+        <a class="secondary-action" href="#servicios">Ver servicios</a>
+      </div>
+
+      <dl class="quick-facts">
+        <div>
+          <dt>6 anos</dt>
+          <dd>de oficio</dd>
+        </div>
+        <div>
+          <dt>Mar-Sab</dt>
+          <dd>10 a 20 hs</dd>
+        </div>
+        <div>
+          <dt>IAP</dt>
+          <dd>estilismo</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="hero-media" aria-label="Imagen editorial de corte de pelo">
+      <img src="/assets/hero-barber.png" alt="Peluquero trabajando un corte con maquina y peine" />
+      <div class="media-card">
+        <img src="/assets/juanse-profile.jpg" alt="Avatar de JuanSe Favoretti en Instagram" />
+        <span>
+          <strong>&#64;haircut.andchill</strong>
+          <small>Turnos por DM o WhatsApp</small>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicios" class="section services-section">
+    <div class="section-heading">
+      <p class="overline">Servicios</p>
+      <h2>Todo lo que el corte necesita, sin vueltas.</h2>
+    </div>
+
+    <div class="services-grid">
+      @for (service of services; track service.title) {
+        <article class="service-card">
+          <span class="service-index">{{ service.index }}</span>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section id="historia" class="section story-section">
+    <div class="story-photo">
+      <img src="/assets/hero-barber.png" alt="Detalle de trabajo de peluqueria con maquina" />
+    </div>
+
+    <div class="story-copy">
+      <p class="overline">JuanSe Favoretti</p>
+      <h2>Estilo, tecnica y buena onda desde 2020.</h2>
+      <p>
+        Juanse empezo a formarse durante la pandemia de 2020 y desde entonces viene
+        perfeccionando habilidades en corte, barba, color y estilismo. Hoy es egresado
+        del Instituto IAP y sigue estudiando ahi para sumar tecnica a cada trabajo.
+      </p>
+      <p>
+        Haircut & Chill nace con una idea simple: que el turno no sea solo resolver el
+        pelo, sino encontrar un momento tranquilo, preciso y personalizado.
+      </p>
+    </div>
+  </section>
+
+  <section class="section gallery-section" aria-labelledby="galeria-title">
+    <div class="section-heading compact">
+      <p class="overline">Galeria</p>
+      <h2 id="galeria-title">Lineas, textura y terminaciones.</h2>
+    </div>
+
+    <div class="gallery-rail">
+      @for (item of gallery; track item) {
+        <figure>
+          <img src="/assets/hero-barber.png" [alt]="item" />
+          <figcaption>{{ item }}</figcaption>
+        </figure>
+      }
+    </div>
+  </section>
+
+  <section id="turnos" class="booking-section">
+    <div>
+      <p class="overline">Turnos</p>
+      <h2>Martes a sabado, de 10 a 20 hs.</h2>
+      <p>
+        Los precios se agregan cuando Juanse los pase. Mientras tanto, la web ya queda
+        lista para convertir visitas en mensajes por Instagram o WhatsApp.
+      </p>
+    </div>
+    <div class="booking-actions">
+      <a
+        pButton
+        class="primary-action"
+        href="https://wa.me/?text=Hola%20Juanse%2C%20quiero%20consultar%20por%20un%20turno"
+        target="_blank"
+        rel="noreferrer"
+      >
+        WhatsApp
+      </a>
+      <a class="secondary-action dark" href="https://www.instagram.com/haircut.andchill/" target="_blank" rel="noreferrer">
+        Instagram
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <span>Haircut & Chill</span>
+    <span>JuanSe Favoretti · Tandil</span>
+  </footer>
+</main>
