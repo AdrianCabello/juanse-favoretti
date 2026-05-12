@@ -7,6 +7,12 @@ type Service = {
   description: string;
 };
 
+type GalleryItem = {
+  image: string;
+  alt: string;
+  caption: string;
+};
+
 @Component({
   selector: 'app-root',
   imports: [ButtonModule],
@@ -14,6 +20,8 @@ type Service = {
   styleUrl: './app.scss',
 })
 export class App {
+  protected readonly calendlyUrl = 'https://calendly.com/juansefavoretti';
+
   protected readonly services: Service[] = [
     {
       index: '01',
@@ -47,5 +55,31 @@ export class App {
     },
   ];
 
-  protected readonly gallery = ['Cortes con linea', 'Barba prolija', 'Textura natural', 'Peinados'];
+  protected readonly gallery: GalleryItem[] = [
+    {
+      image: '/assets/instagram/fade-work.jpg',
+      alt: 'JuanSe trabajando un fade con maquina',
+      caption: 'Fade en proceso',
+    },
+    {
+      image: '/assets/instagram/beard-detail.jpg',
+      alt: 'Detalle de barba y terminacion con tijera',
+      caption: 'Barba y detalle',
+    },
+    {
+      image: '/assets/instagram/neck-fade.jpg',
+      alt: 'Detalle de nuca y degradado prolijo',
+      caption: 'Terminacion limpia',
+    },
+    {
+      image: '/assets/instagram/tools-flatlay.jpg',
+      alt: 'Herramientas de peluqueria sobre la mesa de trabajo',
+      caption: 'Mesa de trabajo',
+    },
+    {
+      image: '/assets/instagram/line-cleanup.jpg',
+      alt: 'Perfilado de corte con maquina',
+      caption: 'Perfilado',
+    },
+  ];
 }

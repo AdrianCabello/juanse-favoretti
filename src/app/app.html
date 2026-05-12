@@ -14,8 +14,8 @@
       <a href="#turnos">Turnos</a>
     </div>
 
-    <a class="nav-cta" href="https://www.instagram.com/haircut.andchill/" target="_blank" rel="noreferrer">
-      Instagram
+    <a class="nav-cta" [href]="calendlyUrl" target="_blank" rel="noreferrer">
+      Agendar
     </a>
   </nav>
 
@@ -32,11 +32,11 @@
         <a
           pButton
           class="primary-action"
-          href="https://wa.me/?text=Hola%20Juanse%2C%20quiero%20reservar%20un%20turno%20en%20Haircut%20%26%20Chill"
+          [href]="calendlyUrl"
           target="_blank"
           rel="noreferrer"
         >
-          Pedir turno
+          Agendar reunion
         </a>
         <a class="secondary-action" href="#servicios">Ver servicios</a>
       </div>
@@ -58,12 +58,12 @@
     </div>
 
     <div class="hero-media" aria-label="Imagen editorial de corte de pelo">
-      <img src="/assets/hero-barber.png" alt="Peluquero trabajando un corte con maquina y peine" />
+      <img src="/assets/instagram/fade-work.jpg" alt="JuanSe trabajando un fade con maquina" />
       <div class="media-card">
         <img src="/assets/juanse-profile.jpg" alt="Avatar de JuanSe Favoretti en Instagram" />
         <span>
           <strong>&#64;haircut.andchill</strong>
-          <small>Turnos por DM o WhatsApp</small>
+          <small>Turnos por Calendly, DM o WhatsApp</small>
         </span>
       </div>
     </div>
@@ -88,7 +88,7 @@
 
   <section id="historia" class="section story-section">
     <div class="story-photo">
-      <img src="/assets/hero-barber.png" alt="Detalle de trabajo de peluqueria con maquina" />
+      <img src="/assets/instagram/studio-tools.jpg" alt="Mesa de trabajo de Haircut and Chill con herramientas de peluqueria" />
     </div>
 
     <div class="story-copy">
@@ -113,10 +113,10 @@
     </div>
 
     <div class="gallery-rail">
-      @for (item of gallery; track item) {
+      @for (item of gallery; track item.caption) {
         <figure>
-          <img src="/assets/hero-barber.png" [alt]="item" />
-          <figcaption>{{ item }}</figcaption>
+          <img [src]="item.image" [alt]="item.alt" />
+          <figcaption>{{ item.caption }}</figcaption>
         </figure>
       }
     </div>
@@ -127,14 +127,22 @@
       <p class="overline">Turnos</p>
       <h2>Martes a sabado, de 10 a 20 hs.</h2>
       <p>
-        Los precios se agregan cuando Juanse los pase. Mientras tanto, la web ya queda
-        lista para convertir visitas en mensajes por Instagram o WhatsApp.
+        Elegi el dia y horario disponible en Calendly. Si necesitas coordinar algo
+        especial, tambien podes escribirle por Instagram o WhatsApp.
       </p>
     </div>
     <div class="booking-actions">
       <a
         pButton
         class="primary-action"
+        [href]="calendlyUrl"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Agendar en Calendly
+      </a>
+      <a
+        class="secondary-action dark"
         href="https://wa.me/?text=Hola%20Juanse%2C%20quiero%20consultar%20por%20un%20turno"
         target="_blank"
         rel="noreferrer"
