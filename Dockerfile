@@ -1,20 +1,28 @@
-FROM node:24-alpine AS build
+# Stage 1: Build
+FROM node:20-alpine AS builder
+
 WORKDIR /app
 
-COPY package*.json ./
+COPY package.json package-lock.json* ./
 RUN npm ci
 
 COPY . .
-RUN npm run build
+RUN npm run build:ssr
 
-FROM node:24-alpine AS runtime
-ENV NODE_ENV=production
-ENV PORT=4000
+# Stage 2: Production
+FROM node:20-alpine AS runner
+
 WORKDIR /app
 
-COPY package*.json ./
-RUN npm ci --omit=dev && npm cache clean --force
-COPY --from=build /app/dist ./dist
+COPY --from=builder /app/dist/juanse-favoretti ./dist/juanse-favoretti
+COPY --from=builder /app/package.json ./package.json
+COPY --from=builder /app/package-lock.json ./package-lock.json
+
+RUN mkdir -p dist/juanse-favoretti/browser && touch dist/juanse-favoretti/browser/.env
+
+RUN npm ci --omit=dev
+
+ENV PORT=4000
 
 EXPOSE 4000
-CMD ["npm", "run", "serve:ssr"]
+CMD ["node", "dist/juanse-favoretti/server/server.mjs"]
