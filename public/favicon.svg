@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Haircut and Chill">
+  <defs>
+    <radialGradient id="warmGlow" cx="30%" cy="20%" r="70%">
+      <stop offset="0%" stop-color="#f6c16d" stop-opacity=".8"/>
+      <stop offset="42%" stop-color="#7b4b25" stop-opacity=".55"/>
+      <stop offset="100%" stop-color="#14100c"/>
+    </radialGradient>
+    <linearGradient id="rim" x1="10" y1="8" x2="56" y2="58">
+      <stop offset="0%" stop-color="#f1c27a"/>
+      <stop offset="55%" stop-color="#a96f35"/>
+      <stop offset="100%" stop-color="#3f2818"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="#12100d"/>
+  <rect x="4" y="4" width="56" height="56" rx="13" fill="url(#warmGlow)"/>
+  <rect x="5.5" y="5.5" width="53" height="53" rx="12" fill="none" stroke="url(#rim)" stroke-width="3"/>
+  <path d="M14 43 L50 21" stroke="#f2bd72" stroke-width="2.5" stroke-linecap="round" opacity=".9"/>
+  <path d="M16 47 L48 27" stroke="#fff3dd" stroke-width="1.4" stroke-linecap="round" opacity=".55"/>
+  <text x="32" y="39" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="700" letter-spacing="1" fill="#fff7ea">HC</text>
+</svg>

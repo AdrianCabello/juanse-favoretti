@@ -165,7 +165,7 @@
       {{ filteredCutIdeas().length }} ideas para mostrar en el turno
     </p>
 
-    <div class="cut-ideas-grid">
+    <div class="cut-ideas-grid" [class.is-collapsed]="!cutsExpanded" [class.is-expanded]="cutsExpanded">
       @for (cut of filteredCutIdeas(); track cut.title) {
         <article class="cut-idea">
           <img [src]="cut.image" [alt]="cut.alt" />
@@ -179,6 +179,12 @@
         </article>
       }
     </div>
+
+    @if (hasMoreCutIdeas()) {
+      <button type="button" class="cut-ideas-toggle" (click)="toggleCutsExpanded()">
+        {{ cutsExpanded ? 'Ver menos' : 'Ver mas cortes' }}
+      </button>
+    }
   </section>
 
   <section id="turnos" class="booking-section">

@@ -35,6 +35,8 @@ export class App {
   protected readonly calendlyUrl = 'https://calendly.com/favorettijuansergio';
   protected selectedAudience: AudienceFilter = 'Todos';
   protected selectedCutTag = 'Todos';
+  protected cutsExpanded = false;
+  protected readonly mobileCutPreviewLimit = 6;
 
   protected readonly audienceFilters: AudienceFilter[] = ['Todos', 'Hombres', 'Mujeres', 'Unisex'];
 
@@ -339,10 +341,20 @@ export class App {
 
   protected setAudienceFilter(filter: AudienceFilter): void {
     this.selectedAudience = filter;
+    this.cutsExpanded = false;
   }
 
   protected setCutTagFilter(filter: string): void {
     this.selectedCutTag = filter;
+    this.cutsExpanded = false;
+  }
+
+  protected toggleCutsExpanded(): void {
+    this.cutsExpanded = !this.cutsExpanded;
+  }
+
+  protected hasMoreCutIdeas(): boolean {
+    return this.filteredCutIdeas().length > this.mobileCutPreviewLimit;
   }
 
   protected filteredCutIdeas(): CutIdea[] {

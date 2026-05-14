@@ -728,6 +728,30 @@ h1 {
   padding: 0 26px;
 }
 
+.cut-ideas-toggle {
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  color: var(--ivory);
+  cursor: pointer;
+  display: none;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 900;
+  justify-content: center;
+  margin: 22px auto 0;
+  min-height: 50px;
+  padding: 0 24px;
+  transition: background 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+  width: min(100%, 320px);
+}
+
+.cut-ideas-toggle:hover {
+  background: #241b15;
+  box-shadow: 0 14px 28px rgba(18, 16, 13, 0.16);
+  transform: translateY(-2px);
+}
+
 .booking-section {
   align-items: center;
   background:
@@ -844,6 +868,14 @@ h1 {
   .services-grid,
   .cut-ideas-grid {
     grid-template-columns: 1fr;
+  }
+
+  .cut-ideas-grid.is-collapsed .cut-idea:nth-child(n + 7) {
+    display: none;
+  }
+
+  .cut-ideas-toggle {
+    display: flex;
   }
 
   .hero-media {
