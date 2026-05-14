@@ -113,13 +113,33 @@
       <h2 id="galeria-title">Lineas, textura y terminaciones.</h2>
     </div>
 
-    <div class="gallery-rail">
-      @for (item of gallery; track item.caption) {
-        <figure>
-          <img [src]="item.image" [alt]="item.alt" />
-          <figcaption>{{ item.caption }}</figcaption>
-        </figure>
-      }
+    <div class="gallery-shell">
+      <button
+        type="button"
+        class="gallery-nav gallery-nav-prev"
+        aria-label="Ver imagen anterior"
+        (click)="scrollGallery(galleryRail, 'prev')"
+      >
+        <span aria-hidden="true">&#8249;</span>
+      </button>
+
+      <div #galleryRail class="gallery-rail">
+        @for (item of gallery; track item.caption) {
+          <figure>
+            <img [src]="item.image" [alt]="item.alt" />
+            <figcaption>{{ item.caption }}</figcaption>
+          </figure>
+        }
+      </div>
+
+      <button
+        type="button"
+        class="gallery-nav gallery-nav-next"
+        aria-label="Ver imagen siguiente"
+        (click)="scrollGallery(galleryRail, 'next')"
+      >
+        <span aria-hidden="true">&#8250;</span>
+      </button>
     </div>
   </section>
 

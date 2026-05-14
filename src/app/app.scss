@@ -1,9 +1,6 @@
 :host {
   --ink: #12100d;
   --charcoal: #1a1713;
-  --espresso: #261d17;
-  --walnut: #4b3527;
-  --stone: #7c7166;
   --cream: #eee6d8;
   --ivory: #fbf4e9;
   --muted: rgba(251, 244, 233, 0.68);
@@ -246,28 +243,14 @@ h1 {
   padding: 0 24px;
   position: relative;
   text-decoration: none;
-  transition: box-shadow 180ms ease, filter 180ms ease, transform 180ms ease;
-}
-
-.primary-action::after {
-  background: linear-gradient(90deg, transparent, rgba(251, 244, 233, 0.42), transparent);
-  content: "";
-  inset: 0;
-  opacity: 0;
-  position: absolute;
-  transform: translateX(-90%);
-  transition: opacity 180ms ease, transform 420ms ease;
+  transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
 .primary-action:hover {
-  box-shadow: 0 12px 28px rgba(201, 147, 84, 0.24);
-  filter: brightness(1.06);
+  background: #d0a064;
+  border-color: #d0a064;
+  box-shadow: 0 14px 30px rgba(18, 16, 13, 0.18), 0 0 0 1px rgba(251, 244, 233, 0.08) inset;
   transform: translateY(-2px);
-}
-
-.primary-action:hover::after {
-  opacity: 1;
-  transform: translateX(90%);
 }
 
 .secondary-action {
@@ -434,26 +417,11 @@ h1 {
   transition: background 220ms ease, border-color 220ms ease, transform 220ms ease;
 }
 
-.service-card::before {
-  background: linear-gradient(120deg, transparent, rgba(225, 176, 110, 0.1), transparent);
-  content: "";
-  inset: 0;
-  opacity: 0;
-  pointer-events: none;
-  position: absolute;
-  transform: translateX(-18%);
-  transition: opacity 220ms ease, transform 380ms ease;
-}
-
 .service-card:hover {
-  background: linear-gradient(180deg, rgba(251, 244, 233, 0.1), rgba(251, 244, 233, 0.04));
-  border-color: rgba(225, 176, 110, 0.22);
-  transform: translateY(-4px);
-}
-
-.service-card:hover::before {
-  opacity: 1;
-  transform: translateX(18%);
+  background: linear-gradient(180deg, rgba(251, 244, 233, 0.085), rgba(251, 244, 233, 0.036));
+  border-color: rgba(238, 230, 216, 0.18);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14);
+  transform: translateY(-3px);
 }
 
 .service-index {
@@ -492,19 +460,19 @@ h1 {
 }
 
 .story-photo::after {
-  background: linear-gradient(140deg, transparent 0%, rgba(225, 176, 110, 0.18) 48%, transparent 62%);
+  background:
+    linear-gradient(180deg, rgba(18, 16, 13, 0.08), rgba(18, 16, 13, 0.18)),
+    radial-gradient(circle at 28% 18%, rgba(238, 230, 216, 0.08), transparent 38%);
   content: "";
   inset: -24%;
-  opacity: 0;
+  opacity: 0.28;
   pointer-events: none;
   position: absolute;
-  transform: translateX(-24%);
-  transition: opacity 260ms ease, transform 620ms ease;
+  transition: opacity 320ms ease;
 }
 
 .story-photo:hover::after {
-  opacity: 0.9;
-  transform: translateX(24%);
+  opacity: 0.46;
 }
 
 .story-photo img {
@@ -534,6 +502,10 @@ h1 {
   display: block;
 }
 
+.gallery-shell {
+  position: relative;
+}
+
 .gallery-rail {
   display: grid;
   gap: 18px;
@@ -542,36 +514,95 @@ h1 {
   overflow-x: auto;
   padding: 6px clamp(20px, 5vw, 72px) 12px 0;
   scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.gallery-rail::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-nav {
+  align-items: center;
+  background: rgba(18, 16, 13, 0.72);
+  border: 1px solid rgba(238, 230, 216, 0.2);
+  border-radius: 50%;
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.28);
+  color: var(--ivory);
+  cursor: pointer;
+  display: inline-flex;
+  height: 48px;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+  width: 48px;
+  z-index: 4;
+}
+
+.gallery-nav span {
+  display: block;
+  font-size: 44px;
+  font-weight: 300;
+  line-height: 0.74;
+  transform: translateY(-2px);
+}
+
+.gallery-nav:hover {
+  background: rgba(18, 16, 13, 0.9);
+  border-color: rgba(238, 230, 216, 0.36);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.34);
+  transform: translateY(-50%) scale(1.04);
+}
+
+.gallery-nav-prev {
+  left: -24px;
+}
+
+.gallery-nav-next {
+  right: clamp(18px, 5vw, 56px);
 }
 
 .gallery-rail figure {
-  background: rgba(251, 244, 233, 0.08);
-  border: 1px solid rgba(251, 244, 233, 0.1);
+  background: rgba(251, 244, 233, 0.075);
+  border: 1px solid rgba(238, 230, 216, 0.11);
   border-radius: 8px;
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.18);
   margin: 0;
   overflow: hidden;
+  position: relative;
   scroll-snap-align: start;
-  transition: border-color 220ms ease, transform 220ms ease;
+  transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
 }
 
 .gallery-rail img {
   aspect-ratio: 4 / 5;
-  filter: saturate(0.96) contrast(1.04);
+  transition: filter 260ms ease, transform 420ms ease;
 }
 
 .gallery-rail figcaption {
+  background: rgba(18, 16, 13, 0.2);
   font-size: 16px;
   font-weight: 800;
   padding: 16px 18px 18px;
+  position: relative;
+  z-index: 1;
 }
 
 .gallery-rail figure:hover,
 .cut-idea:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
 }
 
 .gallery-rail figure:hover {
-  border-color: rgba(225, 176, 110, 0.24);
+  border-color: rgba(238, 230, 216, 0.22);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.24);
+}
+
+.gallery-rail figure:hover img {
+  transform: scale(1.018);
 }
 
 .cut-ideas-section {
@@ -627,7 +658,8 @@ h1 {
 }
 
 .filter-group button:hover {
-  border-color: rgba(123, 84, 45, 0.36);
+  background: rgba(18, 16, 13, 0.07);
+  border-color: rgba(18, 16, 13, 0.24);
   transform: translateY(-1px);
 }
 
@@ -747,8 +779,8 @@ h1 {
 }
 
 .cut-ideas-toggle:hover {
-  background: #241b15;
-  box-shadow: 0 14px 28px rgba(18, 16, 13, 0.16);
+  background: #211913;
+  box-shadow: 0 14px 28px rgba(18, 16, 13, 0.16), 0 0 0 1px rgba(251, 244, 233, 0.06) inset;
   transform: translateY(-2px);
 }
 
@@ -890,6 +922,19 @@ h1 {
 
   .gallery-rail {
     grid-auto-columns: minmax(250px, 82vw);
+  }
+
+  .gallery-nav {
+    height: 44px;
+    width: 44px;
+  }
+
+  .gallery-nav-prev {
+    left: 0;
+  }
+
+  .gallery-nav-next {
+    right: 18px;
   }
 
   .footer {

@@ -90,47 +90,47 @@ export class App {
 
   protected readonly gallery: GalleryItem[] = [
     {
-      image: '/assets/instagram/juanse-finished-frontal.webp',
+      image: '/assets/instagram/graded/juanse-finished-frontal-graded.webp',
       alt: 'Corte terminado con fade limpio y barba perfilada',
       caption: 'Resultado final',
     },
     {
-      image: '/assets/instagram/juanse-martin-design.webp',
+      image: '/assets/instagram/graded/juanse-martin-design-graded.webp',
       alt: 'Corte terminado con fade prolijo y textura natural',
       caption: 'Textura natural',
     },
     {
-      image: '/assets/instagram/juanse-fade-lines.webp',
+      image: '/assets/instagram/graded/juanse-fade-lines-graded.webp',
       alt: 'Fade con diseno de lineas en clienta',
       caption: 'Lineas con fade',
     },
     {
-      image: '/assets/instagram/juanse-beard-trim.webp',
+      image: '/assets/instagram/graded/juanse-beard-trim-graded.webp',
       alt: 'JuanSe perfilando barba con maquina',
       caption: 'Barba perfilada',
     },
     {
-      image: '/assets/instagram/juanse-nape-work.webp',
+      image: '/assets/instagram/graded/juanse-nape-work-graded.webp',
       alt: 'Trabajo de maquina en nuca y degradado',
       caption: 'Nuca prolija',
     },
     {
-      image: '/assets/instagram/juanse-back-process.webp',
+      image: '/assets/instagram/graded/juanse-back-process-graded.webp',
       alt: 'JuanSe trabajando un degradado desde atras',
       caption: 'Degradado',
     },
     {
-      image: '/assets/instagram/juanse-top-cutting.webp',
+      image: '/assets/instagram/graded/juanse-top-cutting-graded.webp',
       alt: 'JuanSe cortando la parte superior del pelo',
       caption: 'Trabajo superior',
     },
     {
-      image: '/assets/instagram/juanse-beard-comb.webp',
+      image: '/assets/instagram/graded/juanse-beard-comb-graded.webp',
       alt: 'JuanSe acomodando barba con peine y tijera',
       caption: 'Detalle de barba',
     },
     {
-      image: '/assets/instagram/juanse-detail-machine.webp',
+      image: '/assets/instagram/graded/juanse-detail-machine-graded.webp',
       alt: 'Detalle de maquina trabajando un corte',
       caption: 'Precision',
     },
@@ -351,6 +351,18 @@ export class App {
 
   protected toggleCutsExpanded(): void {
     this.cutsExpanded = !this.cutsExpanded;
+  }
+
+  protected scrollGallery(rail: HTMLElement, direction: 'prev' | 'next'): void {
+    const firstCard = rail.querySelector<HTMLElement>('figure');
+    const gap = Number.parseFloat(getComputedStyle(rail).columnGap || '18');
+    const cardWidth = firstCard?.getBoundingClientRect().width ?? rail.clientWidth * 0.82;
+    const scrollAmount = cardWidth + gap;
+
+    rail.scrollBy({
+      left: direction === 'next' ? scrollAmount : -scrollAmount,
+      behavior: 'smooth',
+    });
   }
 
   protected hasMoreCutIdeas(): boolean {
