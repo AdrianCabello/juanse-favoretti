@@ -11,6 +11,7 @@
     <div class="nav-links">
       <a href="#servicios">Servicios</a>
       <a href="#historia">Juanse</a>
+      <a href="#cortes">Cortes</a>
       <a href="#turnos">Turnos</a>
     </div>
 
@@ -36,7 +37,7 @@
           target="_blank"
           rel="noreferrer"
         >
-          Agendar reunion
+          Agendar turno
         </a>
         <a class="secondary-action" href="#servicios">Ver servicios</a>
       </div>
@@ -58,7 +59,7 @@
     </div>
 
     <div class="hero-media" aria-label="Imagen editorial de corte de pelo">
-      <img src="/assets/instagram/fade-work.jpg" alt="JuanSe trabajando un fade con maquina" />
+      <img src="/assets/instagram/juanse-process-main.png" alt="Detalle de corte con lineas y fade en proceso" />
       <div class="media-card">
         <img src="/assets/juanse-profile.jpg" alt="Avatar de JuanSe Favoretti en Instagram" />
         <span>
@@ -88,7 +89,7 @@
 
   <section id="historia" class="section story-section">
     <div class="story-photo">
-      <img src="/assets/instagram/studio-tools.jpg" alt="Mesa de trabajo de Haircut and Chill con herramientas de peluqueria" />
+      <img src="/assets/instagram/juanse-story-second.png" alt="JuanSe trabajando un corte de autor en el salon" />
     </div>
 
     <div class="story-copy">
@@ -122,6 +123,64 @@
     </div>
   </section>
 
+  <section id="cortes" class="section cut-ideas-section" aria-labelledby="cortes-title">
+    <div class="cut-ideas-intro">
+      <div>
+        <p class="overline">Ideas de cortes</p>
+        <h2 id="cortes-title">Si no sabes que hacerte, empeza por aca.</h2>
+      </div>
+      <p>
+        Son referencias para conversar en el turno: Juanse mira tu tipo de pelo,
+        remolinos, forma de cara y cuanto mantenimiento queres antes de definir el corte.
+      </p>
+    </div>
+
+    <div class="catalog-controls" aria-label="Filtros del catalogo de cortes">
+      <div class="filter-group audience-filter" aria-label="Filtrar por publico">
+        @for (filter of audienceFilters; track filter) {
+          <button
+            type="button"
+            [class.is-active]="selectedAudience === filter"
+            (click)="setAudienceFilter(filter)"
+          >
+            {{ filter }}
+          </button>
+        }
+      </div>
+
+      <div class="filter-group tag-filter" aria-label="Filtrar por estilo">
+        @for (filter of cutTagFilters; track filter) {
+          <button
+            type="button"
+            [class.is-active]="selectedCutTag === filter"
+            (click)="setCutTagFilter(filter)"
+          >
+            {{ filter }}
+          </button>
+        }
+      </div>
+    </div>
+
+    <p class="catalog-count">
+      {{ filteredCutIdeas().length }} ideas para mostrar en el turno
+    </p>
+
+    <div class="cut-ideas-grid">
+      @for (cut of filteredCutIdeas(); track cut.title) {
+        <article class="cut-idea">
+          <img [src]="cut.image" [alt]="cut.alt" />
+          <div class="cut-meta">
+            <span>{{ cut.audience }}</span>
+            <span>{{ cut.tags[0] }}</span>
+          </div>
+          <h3>{{ cut.title }}</h3>
+          <strong>{{ cut.bestFor }}</strong>
+          <p>{{ cut.detail }}</p>
+        </article>
+      }
+    </div>
+  </section>
+
   <section id="turnos" class="booking-section">
     <div>
       <p class="overline">Turnos</p>
@@ -143,7 +202,7 @@
       </a>
       <a
         class="secondary-action dark"
-        href="https://wa.me/?text=Hola%20Juanse%2C%20quiero%20consultar%20por%20un%20turno"
+        href="https://wa.me/5492262557922?text=Hola%20Juanse%2C%20quiero%20consultar%20por%20un%20turno"
         target="_blank"
         rel="noreferrer"
       >
