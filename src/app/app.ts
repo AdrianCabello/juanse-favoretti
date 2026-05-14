@@ -52,14 +52,14 @@ export class App {
     'Color',
     'Bajo mantenimiento',
     'Cambio notorio',
-    'Con lineas',
+    'Con líneas',
   ];
 
   protected readonly services: Service[] = [
     {
       index: '01',
       title: 'Corte de pelo',
-      description: 'Cortes clasicos o actuales, con asesoramiento para encontrar forma, largo y mantenimiento.',
+      description: 'Cortes clásicos o actuales, con asesoramiento para encontrar forma, largo y mantenimiento.',
     },
     {
       index: '02',
@@ -69,17 +69,17 @@ export class App {
     {
       index: '03',
       title: 'Color',
-      description: 'Trabajos de color pensados para acompanar el corte y el estilo personal.',
+      description: 'Trabajos de color pensados para acompañar el corte y el estilo personal.',
     },
     {
       index: '04',
       title: 'Lavado y peinado',
-      description: 'Lavado, secado, planchado y peinados para salir listo del salon.',
+      description: 'Lavado, secado, planchado y peinados para salir listo del salón.',
     },
     {
       index: '05',
-      title: 'Disenos en lineas',
-      description: 'Detalles con maquina y navaja para sumar identidad al corte.',
+      title: 'Diseños en líneas',
+      description: 'Detalles con máquina y navaja para sumar identidad al corte.',
     },
     {
       index: '06',
@@ -101,17 +101,17 @@ export class App {
     },
     {
       image: '/assets/instagram/graded/juanse-fade-lines-graded.webp',
-      alt: 'Fade con diseno de lineas en clienta',
+      alt: 'Fade con diseño de líneas en clienta',
       caption: 'Lineas con fade',
     },
     {
       image: '/assets/instagram/graded/juanse-beard-trim-graded.webp',
-      alt: 'JuanSe perfilando barba con maquina',
+      alt: 'JuanSe perfilando barba con máquina',
       caption: 'Barba perfilada',
     },
     {
       image: '/assets/instagram/graded/juanse-nape-work-graded.webp',
-      alt: 'Trabajo de maquina en nuca y degradado',
+      alt: 'Trabajo de máquina en nuca y degradado',
       caption: 'Nuca prolija',
     },
     {
@@ -131,8 +131,8 @@ export class App {
     },
     {
       image: '/assets/instagram/graded/juanse-detail-machine-graded.webp',
-      alt: 'Detalle de maquina trabajando un corte',
-      caption: 'Precision',
+      alt: 'Detalle de máquina trabajando un corte',
+      caption: 'Precisión',
     },
   ];
 
@@ -144,8 +144,8 @@ export class App {
       bestFor: 'Para prolijar sin cambiarte toda la forma.',
       detail:
         'Se limpia patilla y nuca con degradado suave, manteniendo volumen arriba. Juanse ajusta el largo para que crezca ordenado.',
-      image: '/assets/references/cut-reference-taper-fade.webp',
-      alt: 'Imagen de ejemplo de taper fade con nuca prolija',
+      image: '/assets/references/cut-reference-taper-fade-ai.webp',
+      alt: 'Referencia de taper fade bajo con textura arriba y transición alrededor de la oreja',
     },
     {
       title: 'Crop texturizado',
@@ -153,7 +153,7 @@ export class App {
       tags: ['Corto', 'Bajo mantenimiento'],
       bestFor: 'Para pelo con movimiento y bajo mantenimiento.',
       detail:
-        'Se trabaja textura con tijera y maquina, frente mas liviano y laterales prolijos. Queda facil de peinar todos los dias.',
+        'Se trabaja textura con tijera y máquina, frente más liviano y laterales prolijos. Queda fácil de peinar todos los días.',
       image: '/assets/references/cut-reference-crop-texturizado.webp',
       alt: 'Imagen de ejemplo de crop texturizado con movimiento natural',
     },
@@ -163,7 +163,7 @@ export class App {
       tags: ['Corto', 'Fade', 'Con barba', 'Cambio notorio'],
       bestFor: 'Para un cambio notorio, limpio y actual.',
       detail:
-        'Degradado medio, contornos marcados y barba conectada al corte. Ideal si queres salir con una terminacion mas definida.',
+        'Degradado medio, contornos marcados y barba conectada al corte. Ideal si querés salir con una terminación más definida.',
       image: '/assets/references/cut-reference-fade-barba.webp',
       alt: 'Imagen de ejemplo de fade medio conectado con barba',
     },
@@ -173,7 +173,7 @@ export class App {
       tags: ['Medio', 'Clasico'],
       bestFor: 'Para mantener largo con forma y caida natural.',
       detail:
-        'Se ordenan laterales, peso y puntas sin dejarlo demasiado corto. Buen recurso cuando queres verte prolijo sin fade alto.',
+        'Se ordenan laterales, peso y puntas sin dejarlo demasiado corto. Buen recurso cuando querés verte prolijo sin fade alto.',
       image: '/assets/references/cut-reference-clasico-tijera.webp',
       alt: 'Imagen de ejemplo de corte clasico a tijera',
     },
@@ -181,7 +181,7 @@ export class App {
       title: 'Low fade',
       audience: 'Hombres',
       tags: ['Corto', 'Fade', 'Bajo mantenimiento'],
-      bestFor: 'Para una terminacion limpia sin subir demasiado el degrade.',
+      bestFor: 'Para una terminación limpia sin subir demasiado el degradé.',
       detail:
         'El fade queda bajo y discreto, ideal para mantener una imagen prolija sin perder naturalidad en la forma del corte.',
       image: '/assets/references/cut-reference-low-fade.webp',
@@ -191,9 +191,9 @@ export class App {
       title: 'Burst fade',
       audience: 'Hombres',
       tags: ['Corto', 'Fade', 'Cambio notorio'],
-      bestFor: 'Para marcar mas estilo alrededor de la oreja.',
+      bestFor: 'Para marcar más estilo alrededor de la oreja.',
       detail:
-        'El degrade acompana la curva de la oreja y deja mas presencia atras. Funciona bien si queres algo moderno sin exagerar.',
+        'El degradé acompaña la curva de la oreja y deja más presencia atrás. Funciona bien si querés algo moderno sin exagerar.',
       image: '/assets/references/cut-reference-burst-fade.webp',
       alt: 'Imagen de ejemplo de burst fade',
     },
@@ -203,7 +203,7 @@ export class App {
       tags: ['Medio', 'Capas', 'Cambio notorio'],
       bestFor: 'Para sumar personalidad y movimiento.',
       detail:
-        'Mantiene textura arriba y algo mas de largo en nuca. Juanse puede hacerlo suave para que sea usable todos los dias.',
+        'Mantiene textura arriba y algo más de largo en nuca. Juanse puede hacerlo suave para que sea usable todos los días.',
       image: '/assets/references/cut-reference-mullet-shag.webp',
       alt: 'Imagen de ejemplo de mullet suave',
     },
@@ -213,7 +213,7 @@ export class App {
       tags: ['Corto', 'Bajo mantenimiento', 'Cambio notorio'],
       bestFor: 'Para resolverlo simple, limpio y fuerte.',
       detail:
-        'Corte corto parejo con terminaciones cuidadas. Es directo, comodo y deja la forma de la cabeza como protagonista.',
+        'Corte corto parejo con terminaciones cuidadas. Es directo, cómodo y deja la forma de la cabeza como protagonista.',
       image: '/assets/references/cut-reference-buzz-cut.webp',
       alt: 'Imagen de ejemplo de buzz cut',
     },
@@ -221,9 +221,9 @@ export class App {
       title: 'Bob clasico',
       audience: 'Mujeres',
       tags: ['Corto', 'Clasico', 'Cambio notorio'],
-      bestFor: 'Para un cambio elegante y facil de reconocer.',
+      bestFor: 'Para un cambio elegante y fácil de reconocer.',
       detail:
-        'Largo a la mandibula o un poco mas abajo, puntas limpias y forma definida. Ideal si queres estructura sin complicarte.',
+        'Largo a la mandíbula o un poco más abajo, puntas limpias y forma definida. Ideal si querés estructura sin complicarte.',
       image: '/assets/references/cut-reference-bob-clasico.webp',
       alt: 'Imagen de ejemplo de bob clasico',
     },
@@ -243,7 +243,7 @@ export class App {
       tags: ['Medio', 'Capas', 'Cambio notorio'],
       bestFor: 'Para darle textura y onda al pelo.',
       detail:
-        'Capas visibles, movimiento y una forma mas descontracturada. Se puede adaptar para que no demande tanto peinado.',
+        'Capas visibles, movimiento y una forma más descontracturada. Se puede adaptar para que no demande tanto peinado.',
       image: '/assets/references/cut-reference-shag-wolf.webp',
       alt: 'Imagen de ejemplo de shag suave',
     },
@@ -253,7 +253,7 @@ export class App {
       tags: ['Largo', 'Capas', 'Bajo mantenimiento'],
       bestFor: 'Para mantener largo pero sacar peso.',
       detail:
-        'Se trabajan capas y contorno para que el pelo caiga con mas movimiento sin perder longitud general.',
+        'Se trabajan capas y contorno para que el pelo caiga con más movimiento sin perder longitud general.',
       image: '/assets/references/cut-reference-capas-largas.webp',
       alt: 'Imagen de ejemplo de capas largas',
     },
@@ -263,7 +263,7 @@ export class App {
       tags: ['Medio', 'Largo', 'Capas', 'Cambio notorio'],
       bestFor: 'Para cambiar el marco de la cara sin cortar todo.',
       detail:
-        'El flequillo abre hacia los lados y acompana capas frontales. Es una buena opcion si queres cambio visible pero adaptable.',
+        'El flequillo abre hacia los lados y acompaña capas frontales. Es una buena opción si querés cambio visible pero adaptable.',
       image: '/assets/references/cut-reference-flequillo-cortina.webp',
       alt: 'Imagen de ejemplo de flequillo cortina',
     },
@@ -273,7 +273,7 @@ export class App {
       tags: ['Corto', 'Cambio notorio', 'Bajo mantenimiento'],
       bestFor: 'Para un cambio corto, practico y con caracter.',
       detail:
-        'Se define volumen arriba, laterales limpios y textura suave. Puede quedar femenino, moderno o mas clasico segun la forma.',
+        'Se define volumen arriba, laterales limpios y textura suave. Puede quedar femenino, moderno o más clásico según la forma.',
       image: '/assets/references/cut-reference-pixie.webp',
       alt: 'Imagen de ejemplo de pixie',
     },
@@ -288,12 +288,12 @@ export class App {
       alt: 'Imagen de ejemplo de corte mariposa',
     },
     {
-      title: 'Iluminacion sutil',
+      title: 'Iluminación sutil',
       audience: 'Mujeres',
       tags: ['Largo', 'Color', 'Bajo mantenimiento'],
       bestFor: 'Para aclarar y dar luz sin un cambio extremo.',
       detail:
-        'Reflejos suaves o balayage discreto para sumar dimension. Juanse puede ajustar intensidad segun base y mantenimiento.',
+        'Reflejos suaves o balayage discreto para sumar dimensión. Juanse puede ajustar intensidad según base y mantenimiento.',
       image: '/assets/references/cut-reference-balayage-sutil.webp',
       alt: 'Imagen de ejemplo de iluminacion sutil en pelo largo',
     },
@@ -301,9 +301,9 @@ export class App {
       title: 'Acento de color',
       audience: 'Mujeres',
       tags: ['Medio', 'Color', 'Cambio notorio'],
-      bestFor: 'Para probar color sin tenir todo el pelo.',
+      bestFor: 'Para probar color sin teñir todo el pelo.',
       detail:
-        'Un panel o detalle de color suma personalidad y se puede ubicar donde mas favorezca al corte y al estilo.',
+        'Un panel o detalle de color suma personalidad y se puede ubicar donde más favorezca al corte y al estilo.',
       image: '/assets/references/cut-reference-color-acento.webp',
       alt: 'Imagen de ejemplo de acento de color',
     },
@@ -313,7 +313,7 @@ export class App {
       tags: ['Medio', 'Capas', 'Bajo mantenimiento'],
       bestFor: 'Para dejar crecer con forma y movimiento.',
       detail:
-        'Largo medio con capas suaves para que el pelo caiga natural. Ideal si queres algo relajado sin perder prolijidad.',
+        'Largo medio con capas suaves para que el pelo caiga natural. Ideal si querés algo relajado sin perder prolijidad.',
       image: '/assets/references/cut-reference-flow-medio.webp',
       alt: 'Imagen de ejemplo de flow medio unisex',
     },
@@ -323,19 +323,19 @@ export class App {
       tags: ['Medio', 'Capas', 'Bajo mantenimiento'],
       bestFor: 'Para ordenar volumen y definir mejor la forma.',
       detail:
-        'Se corta respetando el rulo para que el volumen quede equilibrado. Ayuda a que el peinado diario sea mas simple.',
+        'Se corta respetando el rulo para que el volumen quede equilibrado. Ayuda a que el peinado diario sea más simple.',
       image: '/assets/references/cut-reference-rulos-capas.webp',
       alt: 'Imagen de ejemplo de rulos con capas',
     },
     {
       title: 'Lineas sutiles',
       audience: 'Unisex',
-      tags: ['Corto', 'Fade', 'Con lineas', 'Cambio notorio'],
+      tags: ['Corto', 'Fade', 'Con líneas', 'Cambio notorio'],
       bestFor: 'Para sumar un detalle personal al corte.',
       detail:
-        'Una o dos lineas limpias pueden cambiar el gesto del corte sin convertirlo en algo demasiado cargado.',
+        'Una o dos líneas limpias pueden cambiar el gesto del corte sin convertirlo en algo demasiado cargado.',
       image: '/assets/references/cut-reference-lineas.webp',
-      alt: 'Imagen de ejemplo de corte con lineas sutiles',
+      alt: 'Imagen de ejemplo de corte con líneas sutiles',
     },
   ];
 
