@@ -49,7 +49,6 @@ export class App {
     'Clasico',
     'Con barba',
     'Capas',
-    'Color',
     'Bajo mantenimiento',
     'Cambio notorio',
     'Con líneas',
@@ -68,21 +67,16 @@ export class App {
     },
     {
       index: '03',
-      title: 'Color',
-      description: 'Trabajos de color pensados para acompañar el corte y el estilo personal.',
-    },
-    {
-      index: '04',
       title: 'Lavado y peinado',
       description: 'Lavado, secado, planchado y peinados para salir listo del salón.',
     },
     {
-      index: '05',
+      index: '04',
       title: 'Diseños en líneas',
       description: 'Detalles con máquina y navaja para sumar identidad al corte.',
     },
     {
-      index: '06',
+      index: '05',
       title: 'Acomodo de rastas',
       description: 'Orden y mantenimiento de rastas con criterio estetico y cuidado.',
     },
@@ -286,26 +280,6 @@ export class App {
         'Capas frontales amplias y movimiento en largos. Sirve para renovar sin perder la sensacion de pelo largo.',
       image: '/assets/references/cut-reference-corte-mariposa.webp',
       alt: 'Imagen de ejemplo de corte mariposa',
-    },
-    {
-      title: 'Iluminación sutil',
-      audience: 'Mujeres',
-      tags: ['Largo', 'Color', 'Bajo mantenimiento'],
-      bestFor: 'Para aclarar y dar luz sin un cambio extremo.',
-      detail:
-        'Reflejos suaves o balayage discreto para sumar dimensión. Juanse puede ajustar intensidad según base y mantenimiento.',
-      image: '/assets/references/cut-reference-balayage-sutil.webp',
-      alt: 'Imagen de ejemplo de iluminacion sutil en pelo largo',
-    },
-    {
-      title: 'Acento de color',
-      audience: 'Mujeres',
-      tags: ['Medio', 'Color', 'Cambio notorio'],
-      bestFor: 'Para probar color sin teñir todo el pelo.',
-      detail:
-        'Un panel o detalle de color suma personalidad y se puede ubicar donde más favorezca al corte y al estilo.',
-      image: '/assets/references/cut-reference-color-acento.webp',
-      alt: 'Imagen de ejemplo de acento de color',
     },
     {
       title: 'Flow medio',
