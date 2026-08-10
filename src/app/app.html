@@ -201,7 +201,12 @@
     </div>
 
     @if (hasMoreCutIdeas()) {
-      <button type="button" class="cut-ideas-toggle" (click)="toggleCutsExpanded()">
+      <button
+        type="button"
+        class="cut-ideas-toggle"
+        data-testid="cut-ideas-toggle"
+        (click)="toggleCutsExpanded()"
+      >
         {{ cutsExpanded ? 'Ver menos' : 'Ver más cortes' }}
       </button>
     }
